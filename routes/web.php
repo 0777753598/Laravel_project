@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 //route::get('/test', testController@test_method);
 
-Route::get('/login','PagesController@login')->name('login');
+Route::get('/login',['uses'=>'PagesController@login','as'=>'login']);
 
 Route::get('/about','PagesController@about');
 
@@ -27,4 +27,6 @@ Route::post('/submit','UserController@Register');
 
 Route::post('/userLogin','UserController@login');
 
-Route::get('/dashboard','PagesController@dashboard')->name('dashboard');
+Route::get('/dashboard',['middleware'=>'auth','as' => 'dashboard', 'uses'=> 'PagesController@dashboard']);
+
+Route::get('/logout','PagesController@logout');

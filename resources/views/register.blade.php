@@ -9,6 +9,7 @@
 			<li><a href="">Contact us</a></li>
 
 		</ul>
+	</nav>
 
 @stop
 

@@ -10,11 +10,12 @@ class PagesController extends Controller
     public function about(){
     	$name = "Drashana Buddhika";
 
-    	return view("about")->with("name", $name);
+    	return view("about");
     }
 //return the login page in view folder
     public function login (){
-    	return view("login");
+        $error = "";
+    	return view("login",compact('error'));
 
         echo "darshana";
     }
@@ -25,5 +26,10 @@ class PagesController extends Controller
 
     public function dashboard(){
         return view('dashboard');
+    }
+
+    public function logout (){
+        session()->remove('user');
+        return  redirect()->route('login');
     }
 }

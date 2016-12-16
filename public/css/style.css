@@ -1,7 +1,40 @@
-		@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+
 
 		.wrapper {
-			width: 960px;
+			width: 1200px;
 			margin: 0 auto;
 		}
 
@@ -9,7 +42,7 @@
 			margin: 0;
 			background-image: url(https://wings.samco.aero/Wings/img/background.jpg);
 			background-size: cover;
-			font-family: raleway san-sarif;
+			font-family: 'Raleway', sans-serif;
 		}
 
 /*===================================== Header style ======================================*/
@@ -17,6 +50,13 @@
 		header {
 			background-color: rgba(105, 107, 106, 0.55);
 			overflow: hidden;
+		}
+
+		.welcome {
+			list-style: none;
+			padding: 20px 0;
+			float:left;
+			font-family:  'Raleway', sans-serif;
 		}
 
 		header nav {
@@ -97,11 +137,15 @@
 		}
 
 		form a {
-			margin-left: 40%;
+			margin-left: 30%;
 			color: #a5092e;
 
 		}
 
+		.text_wrapper {
+			width: 400px;
+			margin: 100px auto;
+		}
 /*-----------------------------------  Footer style ------------------------------------*/
 
 
@@ -111,7 +155,8 @@
 			background-color: rgba(43, 129, 179, 0.49);
 			overflow: hidden;
 			margin-top: 190px;
-			position: relative;
+			position: absolute;
+			bottom: 0;
 		}
 
 		footer nav {

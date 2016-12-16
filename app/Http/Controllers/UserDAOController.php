@@ -20,17 +20,29 @@ class UserDAOController extends Controller
 
 	public static  function userLogin($request){
 
-       $user =  DB::select('select userName,password from passwords where userName = ? and password = ? ',[$request['username'],$request['password']]);
+       $user =  DB::select('select username,password from userLogin where userName = ? and password = ? ',[$request['username'],$request['password']]);
 
-       // return $user;
+
+
+
 
        if (empty($user)){
-        
-           return  redirect()->route('login');
+
+           $error = 'Invalide username or password!!';
+
+
+           return  view('login',compact('error'));
 
        }
        else {
-          return redirect()->route('dashboard');
+
+           $id = DB::select('select customerId from customer,userLogin where userLogin.username = customer.Email and userLogin.username = ?',[$request['username']]);
+
+           session()->put(['user'=>$request['username'],'customerId'=>$id[0]->customerTd]);
+
+
+                 return redirect()->route('dashboard');
+
        }
 	}
 
